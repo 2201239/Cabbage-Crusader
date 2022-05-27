@@ -4,24 +4,28 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
+   // [SerializeField] private float m_JumpForce = 400f;
     public Vector2 speed = new Vector2(30, 30); //this changes speed
     private bool m_FacingRight = true;
-
     public Animator animator;
 
     // Update is called once per frame
     void Update()
     {
         float inputX = UnityEngine.Input.GetAxis("Horizontal"); //Axis is Imported from the unity engine. 
-        float inputY = UnityEngine.Input.GetAxis("Vertical"); //Axis is Imported from the unity engine. 
 
         animator.SetFloat("Speed", Mathf.Abs(inputX));
 
-        Vector3 movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
+        Vector3 movement = new Vector3(speed.x * inputX, 0);
 
         movement *= Time.deltaTime;
 
         transform.Translate(movement);
+
+       // if(inputX.GetButtonDown = true)
+       //{
+       //     jump = true;
+       // }
 
         // If the input is moving the player right and the player is facing left...
         if (inputX > 0 && !m_FacingRight)
@@ -38,7 +42,10 @@ public class playerMovement : MonoBehaviour
 
         
     }
-
+   //     void FixedUpdate
+   // {
+   //     controller.Move()
+   //}
     private void Flip()
     {
         // Switch the way the player is labelled as facing.
