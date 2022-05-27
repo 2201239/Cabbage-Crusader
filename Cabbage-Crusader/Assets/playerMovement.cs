@@ -39,7 +39,7 @@ public class playerMovement : MonoBehaviour
         }
 
         //Jump
-        if (UnityEngine.Input.GetKeyDown(KeyCode.Space))
+        if (UnityEngine.Input.GetKeyDown(KeyCode.UpArrow))
         {
             rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
         }

@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 655380807}
   - component: {fileID: 655380805}
   - component: {fileID: 655380808}
+  - component: {fileID: 655380809}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -374,6 +375,18 @@ MonoBehaviour:
   animator: {fileID: 655380806}
   rb: {fileID: 655380805}
   jumpAmount: 15
+--- !u!114 &655380809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655380802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46421b612d23f2346a7bd4aabdbae037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &962336933
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,6 +738,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1696745871}
   - component: {fileID: 1696745870}
+  - component: {fileID: 1696745872}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -759,3 +773,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &1696745872
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696745869}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -11.926583, y: -2.9978023}
+  - {x: -11.979905, y: 8.092953}
+  - {x: 12.091532, y: 8.032026}
+  - {x: 12.052015, y: 5.071009}
+  - {x: 11.969278, y: -4.2443495}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
