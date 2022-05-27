@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-   // [SerializeField] private float m_JumpForce = 400f;
     public Vector2 speed = new Vector2(30, 30); //this changes speed
     private bool m_FacingRight = true;
     public Animator animator;
+    public Rigidbody2D rb;
+    public float jumpAmount = 10;
 
     // Update is called once per frame
     void Update()
@@ -22,10 +23,7 @@ public class playerMovement : MonoBehaviour
 
         transform.Translate(movement);
 
-       // if(inputX.GetButtonDown = true)
-       //{
-       //     jump = true;
-       // }
+ 
 
         // If the input is moving the player right and the player is facing left...
         if (inputX > 0 && !m_FacingRight)
@@ -40,12 +38,14 @@ public class playerMovement : MonoBehaviour
             Flip();
         }
 
-        
+        //Jump
+        if (UnityEngine.Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
+        }
     }
-   //     void FixedUpdate
-   // {
-   //     controller.Move()
-   //}
+
+    
     private void Flip()
     {
         // Switch the way the player is labelled as facing.
