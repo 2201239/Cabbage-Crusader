@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    public Vector2 speed = new Vector2(30, 30); //thhis changes speed
+    public Vector2 speed = new Vector2(30, 30); //this changes speed
+
     public Animator animator;
 
     // Update is called once per frame
