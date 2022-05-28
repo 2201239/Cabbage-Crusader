@@ -10,10 +10,6 @@ public class playerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public float jumpAmount = 10;
 
-    bool isGrounded;
-    public Transform groundCheck;
-    public LayerMask groundlayer;
-
     // Update is called once per frame
     void Update()
     {
@@ -27,8 +23,7 @@ public class playerMovement : MonoBehaviour
 
         transform.Translate(movement);
 
-        //This is a groundcheck
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundlayer);
+ 
 
         // If the input is moving the player right and the player is facing left...
         if (inputX > 0 && !m_FacingRight)
@@ -46,11 +41,7 @@ public class playerMovement : MonoBehaviour
         //Jump
         if (UnityEngine.Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (isGrounded) //Checks is p;ayer is grounded 
-            {
-                rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
-
-            }
+            rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
         }
     }
 
