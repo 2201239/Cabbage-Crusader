@@ -220,7 +220,6 @@ GameObject:
   - component: {fileID: 655380807}
   - component: {fileID: 655380805}
   - component: {fileID: 655380808}
-  - component: {fileID: 655380809}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -289,7 +288,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.9, y: -3.235, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2}
-  m_Children: []
+  m_Children:
+  - {fileID: 1586775314}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -374,19 +374,11 @@ MonoBehaviour:
   speed: {x: 10, y: 10}
   animator: {fileID: 655380806}
   rb: {fileID: 655380805}
-  jumpAmount: 15
---- !u!114 &655380809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655380802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46421b612d23f2346a7bd4aabdbae037, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  jumpAmount: 17
+  groundCheck: {fileID: 1586775314}
+  groundlayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &962336933
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +473,7 @@ GameObject:
   - component: {fileID: 1087768428}
   - component: {fileID: 1087768427}
   - component: {fileID: 1087768429}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -728,6 +720,36 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1 &1586775313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1586775314}
+  m_Layer: 0
+  m_Name: groundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1586775314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586775313}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 655380804}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1696745869
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,8 +812,9 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: -11.926583, y: -2.9978023}
-  - {x: -11.979905, y: 8.092953}
-  - {x: 12.091532, y: 8.032026}
+  - {x: -11.92784, y: 10.01938}
+  - {x: -1.552289, y: 10.015544}
+  - {x: 12.039466, y: 10.010519}
   - {x: 12.052015, y: 5.071009}
   - {x: 11.969278, y: -4.2443495}
   m_AdjacentStartPoint: {x: 0, y: 0}
