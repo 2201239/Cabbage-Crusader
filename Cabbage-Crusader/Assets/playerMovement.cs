@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class playerMovement : MonoBehaviour
 {
     public Vector2 speed = new Vector2(30, 30); //this changes speed
@@ -14,8 +15,13 @@ public class playerMovement : MonoBehaviour
     bool isGrounded;
     public Transform groundCheck;
     public LayerMask groundlayer;
-    // Update is called once per frame
-    void Update()
+
+
+
+
+
+        // Update is called once per frame
+        void Update()
     {
         float inputX = UnityEngine.Input.GetAxis("Horizontal"); //Axis is Imported from the unity engine. 
 
@@ -49,12 +55,22 @@ public class playerMovement : MonoBehaviour
              if (isGrounded) //Checks is p;ayer is grounded 
             {
                 rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
-
             }
+        }
+
+        if (isGrounded)
+        {
+            animator.SetBool("IsJumping", false); //starts jump animation
+
+        }
+        else
+        {
+            animator.SetBool("IsJumping", true); //starts jump animation
+
         }
     }
 
-    
+
     private void Flip()
     {
         // Switch the way the player is labelled as facing.
