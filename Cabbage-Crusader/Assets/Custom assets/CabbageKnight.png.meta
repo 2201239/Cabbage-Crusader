@@ -275,6 +275,9 @@ TextureImporter:
   - first:
       213: 5984838753727884482
     second: CabbageKnight_93
+  - first:
+      213: 4278844341552294373
+    second: CabbageKnight_20
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -341,7 +344,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -353,7 +356,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -433,7 +436,7 @@ TextureImporter:
         x: 316
         y: 442
         width: 45
-        height: 39
+        height: 40
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2270,6 +2273,27 @@ TextureImporter:
       bones: []
       spriteID: 2cc21f1332b6e0350800000000000000
       internalID: 5984838753727884482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CabbageKnight_20
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 445
+        width: 8
+        height: 2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e92a632242816b30800000000000000
+      internalID: 4278844341552294373
       vertices: []
       indices: 
       edges: []
