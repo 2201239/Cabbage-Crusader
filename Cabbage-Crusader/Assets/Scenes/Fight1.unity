@@ -247,8 +247,8 @@ GameObject:
   - component: {fileID: 655380804}
   - component: {fileID: 655380803}
   - component: {fileID: 655380806}
-  - component: {fileID: 655380807}
   - component: {fileID: 655380805}
+  - component: {fileID: 655380810}
   - component: {fileID: 655380808}
   - component: {fileID: 655380809}
   m_Layer: 0
@@ -365,32 +365,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &655380807
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655380802}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.3, y: 0.6}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 1.375, y: 1.25}
-    newSize: {x: 3.125, y: 1.71875}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.7, y: 1.2}
-  m_EdgeRadius: 0
 --- !u!114 &655380808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,6 +405,22 @@ MonoBehaviour:
   attackRange: 1.5
   attackDMG: 10
   attackRate: 2
+--- !u!70 &655380810
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655380802}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.28678042, y: 0.5790037}
+  m_Size: {x: 0.8197742, y: 1.1309298}
+  m_Direction: 0
 --- !u!1 &737921746
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,7 +466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAACAn+sU2ikZdQIAADQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzoUxH+ajtxYI6SEJE9rJxRchrbEGWfJIcoBk+O/VyjZ26PSEeLv79u3Typ9EKFsAc9psjOBPmgP53iN4Jt96bfARzvSg1U58QJPzJrjLMImGnFfqhPb4EMuszsEZwX6og8TkyIOlEqk2+ZofYKmtsx5OqbTgQ0Y7rFYe+uyRs//pL7Dk4k+jGZ4+/GkR9a7+yEA5MN3UQTyezibjdT+aNUWD8XwynMezRQ1ifX80mMaz+Xi+7g8ngapUTNK8AI5ztYyjpvew6qj8xHUGTse0lMLWcom7FMGOV3pBM7igfvSgD3MzEIfMIWe38CVNLbjaF0MvK2G8gxUj+akrW3Nqj5WmdypL7DGtVFecT/+E+8MQTo3OH5u2wwhbuEywoxfIqHUd27vw6qvuUp2oPNK9hLcM1LPeGF0q7oPOlFhaWhit2r+3yZYZsGOLV1LvwLJorW6cbu4YZ7iG4c9LKfI9hgaTCthJHawOqwHGX8ovLzgsjq0pPIoq/lj4TQ/dDasDD8JY50P1lArl7XVpMJWsg2c4TemW2igwXYYCFJXusvU87v4K72L/r3qg+Jjq7nWseSN3JQFu86PoLrTVp9tt2UyfnsBmL6WTQkFrNQaevVFLrVS1Yd2RmrJdaVLKOmWHUvCvu0VmCwDO2GzBKWfxnvXZKKIw3UfxfD7iNI5JWD6h/JxUbiuhtT3+2lRLrvyiNd+Y3sbQImw7N/S0ER+57goUKtU7ZgDUS0VxUw7Gd/FPkq+58A7twDmhwo2Tz4RIzY7Ak1vPJIy6PjtDk5YlIYV41w6RhCzDVyUhCN+2eWvgXcAJmzdkV3L9C1BLAwQUAAAICAAAgJ/rrP3ivW0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0krllampKcrK5ZUpiSrJpUrJuspFBYqpZkoGphYVRSqKpqVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAgJ/rFNopGXUCAAA0BQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAgJ/rrP3ivW0AAAB4AAAACQAkAAAAAAAAAAAAAADCAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAHoDAAAAAA==
+    dataString: UEsDBBQAAAgIAACAn+sb102MdQIAADMFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzoUxH+ajtxYI6SEJE9rJxRchrbEGWfJIcoBk+O/VyjZ26PSEeG/37e7Typ9EKFsAc9psjOBPmgP53iN4Jt96LfkIZ3rQaic+oIl5E9xlGERDzCt1Qnt8iGlW5+CMYD/UQWJw5MFSiVSbfM0PsNTWWQ+nVFrwlNEOs5WHPnvk7H/6C0y5+NNohqcPf1pEvas/MlAOTDd0EI+ns8l43Y9mTdJgPJ8M5/FsUYOY3x8NpvFsPp6v+8NJkCoVkzQvgONcreKoqT2sKio/cR2B0zEtpbB1u8RdimDHK72gGVxQP3roD2MzEIfMoWY38SVNLbjaF0MvK2G8g5Ui+akrW3Nqj1VP71SWWGNadV1pPv1D94eBTo3OH5uywwhLuEywo2+QUes6tnfh1de+S3Wi8kj3Et4yUM96Y3SpuCedKTG1tDBatX9vky0zYMcWr1q9A8uitbpxurljnOEahj8vpcj3SA0mFbCTOlgdVgOMv5RfvuGwOLaW8Ch28cfCb3roblhNPAhjnafqKRW2t9elwVCyDp7hNKVbaqPAdBUKUFS6y9bruPsrvOP+n/VA8THV1WuueSN3KQFu46Pojtrq0+22bKZPT2Czl9JJoaC1Golnb9RSK1VtWHekJm1XmpSyTtqhFPzrbpHZAoAzNltwylm8Z302iihM91E8n484jWMSlk8oPyeV26rR2h5/baoVV37Rmm9Mb2NoEbadG3raiI9c2zZSqFTvmAFQL5XCrXEwvoh/kXzNhTdoB84JFS6cfCZEanYEntyEkjDp+uwMTVqVhBTiXTtEErIMH5WEIHxb5q2BdwEnLN6IXcn1L1BLAwQUAAAICAAAgJ/rrP3ivW0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0krllampKcrK5ZUpiSrJpUrJuspFBYqpZkoGphYVRSqKpqVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAgJ/rG9dNjHUCAAAzBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAgJ/rrP3ivW0AAAB4AAAACQAkAAAAAAAAAAAAAADCAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAHoDAAAAAA==
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -940,10 +930,10 @@ Tilemap:
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 10
-    m_Data: {fileID: 11400000, guid: 932822c3aa72d6245a38fc0e08fe9ef3, type: 2}
+    m_Data: {fileID: 11400000, guid: b7963909743c04d499ec33283e350680, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 10
-    m_Data: {fileID: 21300002, guid: f094595c900579d4c85a02612d8fa36c, type: 3}
+    m_Data: {fileID: -3825158359256717600, guid: 332a8b6685ac30d4ea342ea193fb3342, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 10
     m_Data:
@@ -1016,10 +1006,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1690232570}
   - component: {fileID: 1690232569}
-  - component: {fileID: 1690232568}
   - component: {fileID: 1690232567}
   - component: {fileID: 1690232566}
   - component: {fileID: 1690232571}
+  - component: {fileID: 1690232568}
   m_Layer: 7
   m_Name: Bandit
   m_TagString: Untagged
@@ -1067,8 +1057,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!61 &1690232568
-BoxCollider2D:
+--- !u!70 &1690232568
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1080,19 +1070,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5625}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 1.03125, y: 1.125}
-    newSize: {x: 0.78125, y: 1.1875}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.03125, y: 1.125}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.12511602, y: 0.5658269}
+  m_Size: {x: 0.676019, y: 1.1183462}
+  m_Direction: 0
 --- !u!212 &1690232569
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1152,7 +1132,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690232565}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -2, z: 0}
+  m_LocalPosition: {x: -0, y: -2.09, z: 0}
   m_LocalScale: {x: 2.6, y: 2.6, z: 1}
   m_Children: []
   m_Father: {fileID: 1032587583}
