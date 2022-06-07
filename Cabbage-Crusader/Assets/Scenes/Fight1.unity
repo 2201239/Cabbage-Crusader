@@ -1048,6 +1048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b70d2de71e8c1884d87ea15a2bc24fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1690232566}
   target: {fileID: 655380804}
   activateDistance: 50
   pathUpdateSeconds: 0.5
