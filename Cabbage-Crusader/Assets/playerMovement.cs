@@ -10,7 +10,7 @@ public class playerMovement : MonoBehaviour
     public Animator animator;
     public Rigidbody2D rb;
     public float jumpAmount = 10;
-
+    public float rollAmount = 5;
 
     bool isGrounded;
     public Transform groundCheck;
@@ -68,6 +68,15 @@ public class playerMovement : MonoBehaviour
             animator.SetBool("IsJumping", true); //starts jump animation
 
         }
+
+        if (UnityEngine.Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            if (isGrounded) //Checks is player is grounded 
+            {
+                Roll();
+
+            }
+        }
     }
 
 
@@ -81,4 +90,13 @@ public class playerMovement : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+
+    void Roll()
+    {
+        //Play animation
+        animator.SetBool("IsRolling", true);
+        rb.AddForce(Vector2.right * rollAmount, ForceMode2D.Impulse);
+
+    }
+
 }

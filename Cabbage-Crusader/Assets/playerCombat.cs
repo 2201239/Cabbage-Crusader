@@ -15,6 +15,8 @@ public class playerCombat : MonoBehaviour
     public float attackRate = 1f;
     float nextAttackTime = 0f;
 
+    public int health = 100;
+
     // Update is called once per frame
     void Update()
     {
@@ -22,13 +24,13 @@ public class playerCombat : MonoBehaviour
         {
             if (UnityEngine.Input.GetKeyDown(KeyCode.Z))
             {
-                Attack();
+                PlayerAttack();
                 nextAttackTime = Time.time + 1f / attackRate;
             }
         }
     }
 
-    void Attack()
+    void PlayerAttack()
     {
         //Play animation
         animator.SetTrigger("Attack");
@@ -39,6 +41,23 @@ public class playerCombat : MonoBehaviour
         {
             enemy.GetComponent<Enemy>().takeDMG(attackDMG);
         }
+    }
+    public void TakeDamage(int attackDamage)
+    {
+        health -= attackDamage;
+
+        //Play hurt animation
+        animator.SetTrigger("PlayerHurt");
+
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Debug.Log("Player Dead");
     }
 
     private void OnDrawGizmosSelected()
