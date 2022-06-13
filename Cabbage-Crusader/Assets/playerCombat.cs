@@ -21,7 +21,7 @@ public class playerCombat : MonoBehaviour
     
     public HealthBar healthBar;
 
-
+    private bool isBlocking;
 
     //player is an enemy for bandits
     public static List<playerCombat> enemyList = new List<playerCombat>();
@@ -52,10 +52,15 @@ public class playerCombat : MonoBehaviour
             }
         }
 
+        if (UnityEngine.Input.GetKeyDown(KeyCode.X)) //block
+        {
+            animator.SetTrigger("Block");
+            isBlocking = true;
+        }
         // if (Input.GetKeyDown(KeyCode.Space))
         //{
-         //   int damage = 20;
-         
+        //   int damage = 20;
+
         //} 
     }
 
@@ -77,13 +82,19 @@ public class playerCombat : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        //damage = 20;
-        currentHealth -= damage;
-        //healthBar.SetHealth(currentHealth);
+        if (!isBlocking)
+        {
+            //damage = 20;
+            currentHealth -= damage;
+            //healthBar.SetHealth(currentHealth);
 
-        //Play hurt animation
-        animator.SetTrigger("PlayerHurt");
-
+            //Play hurt animation
+            animator.SetTrigger("PlayerHurt");
+        }
+        else
+        {
+            isBlocking = false;
+        }
         if (currentHealth <= 0)
         {
             Die();

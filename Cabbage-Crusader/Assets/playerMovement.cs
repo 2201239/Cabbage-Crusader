@@ -14,7 +14,6 @@ public class playerMovement : MonoBehaviour
     public float startRollTime;
     private float rollTime;
     private int direction;
-
     bool isGrounded;
     public Transform groundCheck;
     public LayerMask groundlayer;
@@ -64,10 +63,7 @@ public class playerMovement : MonoBehaviour
             
         }
 
-
-
-       
-        if (UnityEngine.Input.GetKeyDown(KeyCode.DownArrow))
+        if (UnityEngine.Input.GetKeyDown(KeyCode.DownArrow)) //roll
         {
                     rollTime -= Time.deltaTime;
 

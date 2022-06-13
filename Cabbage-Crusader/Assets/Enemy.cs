@@ -18,14 +18,16 @@ public class Enemy : MonoBehaviour
     public float attackRange = 1f;
     public LayerMask attackMask;
 
+    public Rigidbody2D rb;
 
-
+    private int random;
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         currentHP = maxHP;
-
+        gameObject.tag = "Player";
     }
 
     public void Attack()
@@ -43,12 +45,23 @@ public class Enemy : MonoBehaviour
     
     public void takeDMG(int dmg)
     {
-        currentHP -= dmg;
+        random = Random.Range(1, 4); //random num between 1 and 3 / 33% chance
 
-        //Play hurt animation
-        animator.SetTrigger("Hurt");
+        if (random == 1)
+        {
+            // animator.SetTrigger("Block");
+            Debug.Log("Attack blocked");
 
-        if(currentHP <= 0)
+        }
+        else
+        {
+            currentHP -= dmg;
+            //Knockback
+
+            //Play hurt animation
+            animator.SetTrigger("Hurt");
+        }
+        if (currentHP <= 0)
         {
             Die();
         }
