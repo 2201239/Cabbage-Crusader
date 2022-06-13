@@ -20,10 +20,12 @@ public class playerCombat : MonoBehaviour
     public int currentHealth;
     
     public HealthBar healthBar;
-   
+
+
 
     //player is an enemy for bandits
     public static List<playerCombat> enemyList = new List<playerCombat>();
+
 
     public static List<playerCombat> GetEnemyList()
     {
@@ -33,9 +35,9 @@ public class playerCombat : MonoBehaviour
     private void Start()
     {
         enemyList.Add(this);
-
+ 
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        //healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -50,11 +52,11 @@ public class playerCombat : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            int damage = 20;
+        // if (Input.GetKeyDown(KeyCode.Space))
+        //{
+         //   int damage = 20;
          
-        }
+        //} 
     }
 
  
@@ -75,9 +77,9 @@ public class playerCombat : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        damage = 20;
+        //damage = 20;
         currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
+        //healthBar.SetHealth(currentHealth);
 
         //Play hurt animation
         animator.SetTrigger("PlayerHurt");
