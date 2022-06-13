@@ -18,10 +18,14 @@ public class Enemy : MonoBehaviour
     public float attackRange = 1f;
     public LayerMask attackMask;
 
+  
+
     // Start is called before the first frame update
     void Start()
     {
+
         currentHP = maxHP;
+
     }
 
     public void Attack()
@@ -63,6 +67,8 @@ public class Enemy : MonoBehaviour
 
         m_Rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY;
         this.enabled = false;
+
+   
     }
 
     public void LookAtPlayer()

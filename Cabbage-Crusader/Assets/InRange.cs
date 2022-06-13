@@ -5,11 +5,16 @@ using UnityEngine;
 public class InRange : MonoBehaviour
 {
     public Animator animator;
-    void OnTriggerEnter2D(Collider2D collision)
+    [SerializeField] private float range;
+    private void Update()
     {
-        if(collision.gameObject.tag == "Player")
+        foreach(playerCombat enemy in playerCombat.GetEnemyList())
         {
-            animator.SetBool("inRange", true);
+            if (Vector2.Distance(transform.position, enemy.transform.position) < range)
+            {
+                animator.SetBool("inRange", true);
+            }
+            
         }
     }
 }

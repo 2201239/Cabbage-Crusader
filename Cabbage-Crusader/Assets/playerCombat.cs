@@ -17,6 +17,19 @@ public class playerCombat : MonoBehaviour
 
     public int health = 100;
 
+    //player is an enemy for bandits
+    public static List<playerCombat> enemyList = new List<playerCombat>();
+
+    public static List<playerCombat> GetEnemyList()
+    {
+        return enemyList;
+    }
+
+    private void Start()
+    {
+        enemyList.Add(this);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -42,6 +55,8 @@ public class playerCombat : MonoBehaviour
             enemy.GetComponent<Enemy>().takeDMG(attackDMG);
         }
     }
+
+
     public void TakeDamage(int attackDamage)
     {
         health -= attackDamage;
@@ -58,6 +73,7 @@ public class playerCombat : MonoBehaviour
     void Die()
     {
         Debug.Log("Player Dead");
+        enemyList.Remove(this);
     }
 
     private void OnDrawGizmosSelected()

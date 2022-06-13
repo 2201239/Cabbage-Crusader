@@ -350,7 +350,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.24201107, y: 0.9365957, z: -10}
+  m_LocalPosition: {x: -0.24275303, y: 0.93659186, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -502,10 +502,12 @@ MonoBehaviour:
   animator: {fileID: 655380806}
   rb: {fileID: 655380805}
   jumpAmount: 17
+  rollSpeed: 13
+  startRollTime: 0.1
   groundCheck: {fileID: 742908800}
   groundlayer:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 64
 --- !u!114 &655380809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1250,7 +1252,6 @@ GameObject:
   - component: {fileID: 1690232572}
   - component: {fileID: 1690232573}
   - component: {fileID: 1690232574}
-  - component: {fileID: 1690232576}
   - component: {fileID: 1690232575}
   m_Layer: 7
   m_Name: Bandit
@@ -1489,32 +1490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1690232566}
---- !u!61 &1690232576
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1690232565}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5625}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 1.03125, y: 1.125}
-    newSize: {x: 1.03125, y: 1.125}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 7, y: 1.125}
-  m_EdgeRadius: 0
+  range: 10
 --- !u!1 &1696745869
 GameObject:
   m_ObjectHideFlags: 0

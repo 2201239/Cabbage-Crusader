@@ -10,19 +10,25 @@ public class playerMovement : MonoBehaviour
     public Animator animator;
     public Rigidbody2D rb;
     public float jumpAmount = 10;
-    public float rollAmount = 5;
+    public float rollSpeed = 5;
+    public float startRollTime;
+    private float rollTime;
+    private int direction;
 
     bool isGrounded;
     public Transform groundCheck;
     public LayerMask groundlayer;
 
-
-
-
-
-        // Update is called once per frame
-        void Update()
+    private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        rollTime = startRollTime;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
         float inputX = UnityEngine.Input.GetAxis("Horizontal"); //Axis is Imported from the unity engine. 
 
         animator.SetFloat("Speed", Mathf.Abs(inputX));
@@ -34,6 +40,7 @@ public class playerMovement : MonoBehaviour
         transform.Translate(movement);
 
         //This is a groundcheck
+        isGrounded = false;
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundlayer);
 
         // If the input is moving the player right and the player is facing left...
@@ -50,34 +57,34 @@ public class playerMovement : MonoBehaviour
         }
 
         //Jump
-        if (UnityEngine.Input.GetKeyDown(KeyCode.UpArrow))
+        if (UnityEngine.Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
         {
-             if (isGrounded) //Checks is p;ayer is grounded 
-            {
-                rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
-            }
+            animator.SetTrigger("Jump");
+            rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
+            
         }
 
-        if (isGrounded)
-        {
-            animator.SetBool("IsJumping", false); //starts jump animation
 
-        }
-        else
-        {
-            animator.SetBool("IsJumping", true); //starts jump animation
 
-        }
-
+       
         if (UnityEngine.Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if (isGrounded) //Checks is player is grounded 
-            {
-                Roll();
+                    rollTime -= Time.deltaTime;
 
-            }
+                    if (!m_FacingRight && isGrounded)
+                    {
+                        animator.SetTrigger("Roll");
+                        rb.velocity = Vector2.left * rollSpeed;
+                    }
+                    else if (m_FacingRight && isGrounded)
+                    {
+                        animator.SetTrigger("Roll");
+                        rb.velocity = Vector2.right * rollSpeed;
+                    }
         }
+
     }
+    
 
 
     private void Flip()
@@ -91,12 +98,6 @@ public class playerMovement : MonoBehaviour
         transform.localScale = theScale;
     }
 
-    void Roll()
-    {
-        //Play animation
-        animator.SetBool("IsRolling", true);
-        rb.AddForce(Vector2.right * rollAmount, ForceMode2D.Impulse);
-
-    }
-
+ 
 }
+
