@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
 
         if (random == 1)
         {
-            // animator.SetTrigger("Block");
+            animator.SetTrigger("Block");
             Debug.Log("Attack blocked");
 
         }

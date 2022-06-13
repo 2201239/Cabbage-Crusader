@@ -100,7 +100,7 @@ TextureImporter:
       name: HeroKnight_BlockNoEffect (1)_0
       rect:
         serializedVersion: 2
-        x: 27
+        x: 340
         y: 2
         width: 33
         height: 35
@@ -121,7 +121,7 @@ TextureImporter:
       name: HeroKnight_BlockNoEffect (1)_1
       rect:
         serializedVersion: 2
-        x: 127
+        x: 440
         y: 2
         width: 33
         height: 35
