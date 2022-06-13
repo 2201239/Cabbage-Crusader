@@ -18,12 +18,11 @@ public class Enemy : MonoBehaviour
     public float attackRange = 1f;
     public LayerMask attackMask;
 
-  
+
 
     // Start is called before the first frame update
     void Start()
     {
-
         currentHP = maxHP;
 
     }
@@ -40,7 +39,7 @@ public class Enemy : MonoBehaviour
             colInfo.GetComponent<playerCombat>().TakeDamage(attackDamage);
         }
     }
-
+    
     public void takeDMG(int dmg)
     {
         currentHP -= dmg;
@@ -60,6 +59,7 @@ public class Enemy : MonoBehaviour
 
         //Die animation
         animator.SetBool("IsDead", true);
+
 
         //Disable enemy
         GetComponent<Collider2D>().enabled = false;
@@ -89,12 +89,6 @@ public class Enemy : MonoBehaviour
             isFlipped = true;
         }
     }
-    void OnDrawGizmosSelected()
-    {
-        Vector3 pos = transform.position;
-        pos += transform.right * attackOffset.x;
-        pos += transform.up * attackOffset.y;
 
-        Gizmos.DrawWireSphere(pos, attackRange);
-    }
+
 }

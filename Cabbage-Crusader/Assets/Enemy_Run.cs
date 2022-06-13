@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Enemy_Run : StateMachineBehaviour
 {
-    public float speed = 2.5f;
-    public float attackRange = 4f;
+    public float enemySpeed = 2.5f;
+    public float enemyAttackRange = 4f;
     Transform player;
     Rigidbody2D rb;
     Enemy enemy;
@@ -23,12 +23,13 @@ public class Enemy_Run : StateMachineBehaviour
     {
         enemy.LookAtPlayer();
         Vector2 target = new Vector2(player.position.x, rb.position.y);
-        Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
+        Vector2 newPos = Vector2.MoveTowards(rb.position, target, enemySpeed * Time.fixedDeltaTime);
         rb.MovePosition(newPos);
 
-        if (Vector2.Distance(player.position, rb.position) <= attackRange)
+        if (Vector2.Distance(player.position, rb.position) <= enemyAttackRange)
         {
             animator.SetTrigger("IsAttacking");
+
         }
 
     }

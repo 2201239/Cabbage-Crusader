@@ -16,6 +16,7 @@ public class playerCombat : MonoBehaviour
     float nextAttackTime = 0f;
 
     public int health = 100;
+   
 
     //player is an enemy for bandits
     public static List<playerCombat> enemyList = new List<playerCombat>();
