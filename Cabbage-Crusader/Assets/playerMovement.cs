@@ -28,6 +28,7 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
 
+
         float inputX = UnityEngine.Input.GetAxis("Horizontal"); //Axis is Imported from the unity engine. 
 
         animator.SetFloat("Speed", Mathf.Abs(inputX));
@@ -65,18 +66,7 @@ public class playerMovement : MonoBehaviour
 
         if (UnityEngine.Input.GetKeyDown(KeyCode.DownArrow)) //roll
         {
-                    rollTime -= Time.deltaTime;
-
-                    if (!m_FacingRight && isGrounded)
-                    {
-                        animator.SetTrigger("Roll");
-                        rb.velocity = Vector2.left * rollSpeed;
-                    }
-                    else if (m_FacingRight && isGrounded)
-                    {
-                        animator.SetTrigger("Roll");
-                        rb.velocity = Vector2.right * rollSpeed;
-                    }
+            Roll();
         }
 
     }
@@ -93,7 +83,21 @@ public class playerMovement : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+    private void Roll()
+    {
+        rollTime -= Time.deltaTime;
 
+        if (!m_FacingRight && isGrounded)
+        {
+            animator.SetTrigger("Roll");
+            rb.AddForce(Vector2.left * rollSpeed, ForceMode2D.Impulse);
+        }
+        else if (m_FacingRight && isGrounded)
+        {
+            animator.SetTrigger("Roll");
+            rb.AddForce(Vector2.right * rollSpeed, ForceMode2D.Impulse);
+        }
+    }
  
 }
 

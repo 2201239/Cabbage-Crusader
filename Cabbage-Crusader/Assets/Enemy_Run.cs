@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy_Run : StateMachineBehaviour
 {
-    public float enemySpeed = 2.5f;
+    public float enemySpeed = 3f;
     public float enemyAttackRange = 4f;
     Transform player;
     Rigidbody2D rb;
