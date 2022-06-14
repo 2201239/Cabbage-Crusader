@@ -5,11 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public Animator animator;
-    public int maxHP = 100;
     public Transform player;
     public bool isFlipped = false;
 
-    int currentHP;
     Rigidbody2D m_Rigidbody2D;
 
     public int attackDamage = 20;
@@ -20,7 +18,10 @@ public class Enemy : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    public int enemyMaxHealth = 70;
+    public int enemyCurrentHealth;
 
+    public HealthBarEnemy healthBarEnemy;
 
     private int random;
 
@@ -28,8 +29,11 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        currentHP = maxHP;
+        enemyCurrentHealth = enemyMaxHealth;
         gameObject.tag = "Player";
+
+
+        healthBarEnemy.SetMaxHealthEnemy(enemyMaxHealth);
     }
 
     public void Attack()
@@ -57,7 +61,8 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            currentHP -= dmg;
+            enemyCurrentHealth -= dmg;
+            healthBarEnemy.SetHealthEnemy(enemyCurrentHealth);
             //Knockback
             animator.SetTrigger("Hurt");
             if(isFlipped == true){
@@ -77,7 +82,7 @@ public class Enemy : MonoBehaviour
 
             //Play hurt animation
         }
-        if (currentHP <= 0)
+        if (enemyCurrentHealth <= 0)
         {
             Die();
         }
