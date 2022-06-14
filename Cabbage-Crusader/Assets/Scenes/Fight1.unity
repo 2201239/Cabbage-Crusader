@@ -558,7 +558,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.23469925, y: 0.9366367, z: -10}
+  m_LocalPosition: {x: -0.24275303, y: 0.93659186, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1756,7 +1756,7 @@ MonoBehaviour:
   rb: {fileID: 1690232567}
   enemyMaxHealth: 70
   enemyCurrentHealth: 0
-  healthBarEnemy: {fileID: 0}
+  healthBarEnemy: {fileID: 644393763}
 --- !u!114 &1690232575
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class playerCombat : MonoBehaviour
     public LayerMask enemyLayers;
 
     public float attackRange = 0.5f;
-    public int attackDMG = 20;
+    public int attackDMG = 10;
 
     public float attackRate = 1f;
     float nextAttackTime = 0f;
@@ -93,7 +93,7 @@ public class playerCombat : MonoBehaviour
                 transform.Translate(-0.2f, 0, 0);
                 transform.Translate(-0.2f, 0, 0);
                 transform.Translate(-0.2f, 0, 0);
-                transform.Translate(-0.2f, 0, 0);
+                transform.Translate(- 0.2f, 0, 0);
             }
             else
             {
