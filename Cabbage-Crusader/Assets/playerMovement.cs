@@ -6,7 +6,7 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
     public Vector2 speed = new Vector2(30, 30); //this changes speed
-    private bool m_FacingRight = true;
+   private bool m_FacingRight = true;
     public Animator animator;
     public Rigidbody2D rb;
     public float jumpAmount = 10;

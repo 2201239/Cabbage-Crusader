@@ -20,6 +20,8 @@ public class Enemy : MonoBehaviour
 
     public Rigidbody2D rb;
 
+
+
     private int random;
 
     // Start is called before the first frame update
@@ -57,9 +59,23 @@ public class Enemy : MonoBehaviour
         {
             currentHP -= dmg;
             //Knockback
+            animator.SetTrigger("Hurt");
+            if(isFlipped == true){
+                transform.Translate(-0.2f, 0, 0);
+                transform.Translate(-0.2f, 0, 0);
+                transform.Translate(-0.2f, 0, 0);
+                transform.Translate(-0.2f, 0, 0);
+            }
+            else
+            {
+                transform.Translate(0.2f, 0, 0);
+                transform.Translate(0.2f, 0, 0);
+                transform.Translate(0.2f, 0, 0);
+                transform.Translate(0.2f, 0, 0);
+            }
+
 
             //Play hurt animation
-            animator.SetTrigger("Hurt");
         }
         if (currentHP <= 0)
         {

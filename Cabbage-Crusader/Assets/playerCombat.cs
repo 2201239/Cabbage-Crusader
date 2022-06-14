@@ -23,6 +23,8 @@ public class playerCombat : MonoBehaviour
 
     private bool isBlocking;
 
+
+
     //player is an enemy for bandits
     public static List<playerCombat> enemyList = new List<playerCombat>();
 
@@ -86,6 +88,21 @@ public class playerCombat : MonoBehaviour
 
             //Play hurt animation
             animator.SetTrigger("PlayerHurt");
+            if (transform.rotation.y == 0)
+            {
+                transform.Translate(-0.2f, 0, 0);
+                transform.Translate(-0.2f, 0, 0);
+                transform.Translate(-0.2f, 0, 0);
+                transform.Translate(-0.2f, 0, 0);
+            }
+            else
+            {
+                transform.Translate(0.2f, 0, 0);
+                transform.Translate(0.2f, 0, 0);
+                transform.Translate(0.2f, 0, 0);
+                transform.Translate(0.2f, 0, 0);
+            }
+
         }
         else
         {

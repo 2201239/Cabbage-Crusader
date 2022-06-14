@@ -704,7 +704,7 @@ MonoBehaviour:
     m_Bits: 128
   attackRange: 1.5
   attackDMG: 10
-  attackRate: 2
+  attackRate: 1.7
   playerMaxHealth: 100
   playerCurrentHealth: 0
   healthBar: {fileID: 286636918}
