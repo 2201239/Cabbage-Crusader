@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
 
     private int random;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,26 +33,25 @@ public class Enemy : MonoBehaviour
         enemyCurrentHealth = enemyMaxHealth;
         gameObject.tag = "Player";
 
-
         healthBarEnemy.SetMaxHealthEnemy(enemyMaxHealth);
     }
 
     public void Attack()
     {
-        Vector3 pos = transform.position;
-        pos += transform.right * attackOffset.x;
-        pos += transform.up * attackOffset.y;
+            Vector3 pos = transform.position;
+            pos += transform.right * attackOffset.x;
+            pos += transform.up * attackOffset.y;
 
-        Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
-        if (colInfo != null)
-        {
-            colInfo.GetComponent<playerCombat>().TakeDamage(attackDamage);
-        }
+            Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
+            if (colInfo != null)
+            {
+                colInfo.GetComponent<playerCombat>().TakeDamage(attackDamage);
+            }
+        
     }
-    
     public void takeDMG(int dmg)
     {
-        random = Random.Range(1, 4); //random num between 1 and 3 / 33% chance
+        random = Random.Range(1, 5); //random num between 1 and 4 / 25% chance
 
         if (random == 1)
         {
@@ -65,11 +65,13 @@ public class Enemy : MonoBehaviour
             healthBarEnemy.SetHealthEnemy(enemyCurrentHealth);
             //Knockback
             animator.SetTrigger("Hurt");
-            if(isFlipped == true){
-                transform.Translate(-0.2f, 0, 0);
-                transform.Translate(-0.2f, 0, 0);
-                transform.Translate(-0.2f, 0, 0);
-                transform.Translate(-0.2f, 0, 0);
+            if (isFlipped == true)
+            {
+                transform.Translate(0.2f, 0, 0);
+                transform.Translate(0.2f, 0, 0);
+                transform.Translate(0.2f, 0, 0);
+                transform.Translate(0.2f, 0, 0);
+                transform.Translate(0.2f, 0, 0);
             }
             else
             {
@@ -77,6 +79,8 @@ public class Enemy : MonoBehaviour
                 transform.Translate(0.2f, 0, 0);
                 transform.Translate(0.2f, 0, 0);
                 transform.Translate(0.2f, 0, 0);
+                transform.Translate(0.2f, 0, 0);
+
             }
 
 
@@ -126,6 +130,5 @@ public class Enemy : MonoBehaviour
             isFlipped = true;
         }
     }
-
 
 }

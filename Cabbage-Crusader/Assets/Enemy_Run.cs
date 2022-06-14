@@ -9,6 +9,7 @@ public class Enemy_Run : StateMachineBehaviour
     Transform player;
     Rigidbody2D rb;
     Enemy enemy;
+    private int random;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -26,10 +27,18 @@ public class Enemy_Run : StateMachineBehaviour
         Vector2 newPos = Vector2.MoveTowards(rb.position, target, enemySpeed * Time.fixedDeltaTime);
         rb.MovePosition(newPos);
 
+        random = Random.Range(1, 6); //random num between 1 and 5
+
         if (Vector2.Distance(player.position, rb.position) <= enemyAttackRange)
         {
-            animator.SetTrigger("IsAttacking");
+            if (random == 1)
+            {
 
+            }
+            else
+            {
+                animator.SetTrigger("IsAttacking");
+            }
         }
 
     }
@@ -39,5 +48,6 @@ public class Enemy_Run : StateMachineBehaviour
     {
         animator.ResetTrigger("IsAttacking");
     }
+
 
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerCombat : MonoBehaviour
 {
@@ -22,7 +23,6 @@ public class playerCombat : MonoBehaviour
     public HealthBar healthBar;
 
     private bool isBlocking;
-
 
 
     //player is an enemy for bandits
@@ -93,10 +93,12 @@ public class playerCombat : MonoBehaviour
                 transform.Translate(-0.2f, 0, 0);
                 transform.Translate(-0.2f, 0, 0);
                 transform.Translate(-0.2f, 0, 0);
-                transform.Translate(- 0.2f, 0, 0);
+                transform.Translate(-0.2f, 0, 0);
+                transform.Translate(-0.2f, 0, 0);
             }
             else
             {
+                transform.Translate(0.2f, 0, 0);
                 transform.Translate(0.2f, 0, 0);
                 transform.Translate(0.2f, 0, 0);
                 transform.Translate(0.2f, 0, 0);
@@ -116,8 +118,8 @@ public class playerCombat : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Player Dead");
-        enemyList.Remove(this);
+        deathAnim();
+        SceneManager.LoadScene("Fight1");
     }
 
     private void OnDrawGizmosSelected()
@@ -126,6 +128,12 @@ public class playerCombat : MonoBehaviour
             return;
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+    void deathAnim()
+    {
+        animator.SetTrigger("Death");
+        Debug.Log("Player Dead");
+        enemyList.Remove(this);
     }
 }
 
