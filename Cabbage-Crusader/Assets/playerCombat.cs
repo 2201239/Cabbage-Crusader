@@ -16,8 +16,8 @@ public class playerCombat : MonoBehaviour
     float nextAttackTime = 0f;
 
     //health code
-    public int playermaxHealth = 100;
-    public int playercurrentHealth;
+    public int playerMaxHealth = 100;
+    public int playerCurrentHealth;
     
     public HealthBar healthBar;
 
@@ -32,12 +32,12 @@ public class playerCombat : MonoBehaviour
         return enemyList;
     }
 
-   private void Start()
+   void Start()
     {
         enemyList.Add(this);
  
-        playercurrentHealth = playermaxHealth;
-        healthBar.SetMaxHealth(playermaxHealth);
+        playerCurrentHealth = playerMaxHealth;
+        healthBar.SetMaxHealth(playerMaxHealth);
     }
 
     // Update is called once per frame
@@ -57,11 +57,6 @@ public class playerCombat : MonoBehaviour
             animator.SetTrigger("Block");
             isBlocking = true;
         }
-         if (UnityEngine.Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-
-        } 
     }
 
  
@@ -80,13 +75,14 @@ public class playerCombat : MonoBehaviour
     }
 
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int attackDamage)
     {
-        playercurrentHealth -= damage;
-        healthBar.SetHealth(playercurrentHealth);
+
 
         if (!isBlocking)
         {
+            playerCurrentHealth -= attackDamage;
+            healthBar.SetHealth(playerCurrentHealth);
 
             //Play hurt animation
             animator.SetTrigger("PlayerHurt");
@@ -95,7 +91,7 @@ public class playerCombat : MonoBehaviour
         {
             isBlocking = false;
         }
-        if (playercurrentHealth <= 0)
+        if (playerCurrentHealth <= 0)
         {
             Die();
         }
