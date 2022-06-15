@@ -23,7 +23,9 @@ public class playerCombat : MonoBehaviour
     public HealthBar healthBar;
 
     private bool isBlocking;
+    private Rigidbody2D rb;
 
+    private bool alreadyDead = false;
 
     //player is an enemy for bandits
     public static List<playerCombat> enemyList = new List<playerCombat>();
@@ -36,6 +38,9 @@ public class playerCombat : MonoBehaviour
 
    void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+
         enemyList.Add(this);
  
         playerCurrentHealth = playerMaxHealth;
@@ -118,8 +123,18 @@ public class playerCombat : MonoBehaviour
 
     void Die()
     {
-        deathAnim();
-        SceneManager.LoadScene("Fight1");
+        if (alreadyDead == false)
+        {
+            enemyList.Remove(this);
+
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+
+            animator.SetTrigger("Death");
+            Debug.Log("Player Dead");
+
+            alreadyDead = true;
+        }
     }
 
     private void OnDrawGizmosSelected()
@@ -129,11 +144,10 @@ public class playerCombat : MonoBehaviour
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
-    void deathAnim()
+
+    private void restartLevel()
     {
-        animator.SetTrigger("Death");
-        Debug.Log("Player Dead");
-        enemyList.Remove(this);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
 
