@@ -147,7 +147,7 @@ public class playerCombat : MonoBehaviour
 
     private void restartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Game Over");
     }
 }
 
