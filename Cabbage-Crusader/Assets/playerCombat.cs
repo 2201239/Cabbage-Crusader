@@ -32,6 +32,8 @@ public class playerCombat : MonoBehaviour
     public AudioSource shieldBlock;
     public AudioSource backgroundMusic;
 
+    public string SceneName;
+
     //player is an enemy for bandits
     public static List<playerCombat> enemyList = new List<playerCombat>();
 
@@ -154,6 +156,11 @@ public class playerCombat : MonoBehaviour
             return;
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    public void restartLevel()
+    {
+        SceneManager.LoadScene(SceneName);
     }
 
     void OnDestroy()
