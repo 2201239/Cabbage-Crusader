@@ -8,6 +8,7 @@ public class InRange : MonoBehaviour
     [SerializeField] private float range;
     private void Update()
     {
+
         foreach(playerCombat enemy in playerCombat.GetEnemyList())
         {
             if (Vector2.Distance(transform.position, enemy.transform.position) < range)

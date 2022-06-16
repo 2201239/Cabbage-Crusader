@@ -156,9 +156,9 @@ public class playerCombat : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
-    private void restartLevel()
+    void OnDestroy()
     {
-        SceneManager.LoadScene("Game Over");
+        enemyList.Remove(this);
     }
 }
 

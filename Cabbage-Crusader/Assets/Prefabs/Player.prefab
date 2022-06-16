@@ -191,6 +191,8 @@ MonoBehaviour:
   playerCurrentHealth: 0
   healthBar: {fileID: 0}
   swordSound: {fileID: 0}
+  shieldBlock: {fileID: 0}
+  backgroundMusic: {fileID: 0}
 --- !u!1 &5919186489690632610
 GameObject:
   m_ObjectHideFlags: 0

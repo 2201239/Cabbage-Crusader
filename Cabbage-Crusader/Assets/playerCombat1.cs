@@ -77,9 +77,7 @@ public class playerCombat1 : MonoBehaviour
         //Damage enemies
         foreach (Collider2D enemy in hitEnemies)
         {
-            //enemy.GetComponent<Enemy>().takeDMG(attackDMG);
-           
-            enemy.GetComponent<Box>().takeDMG(attackDMG);
+            enemy.GetComponent<Enemy>().takeDMG(attackDMG);
         }
     }
 
