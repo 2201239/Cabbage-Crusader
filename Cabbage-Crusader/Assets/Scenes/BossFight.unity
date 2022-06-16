@@ -253,11 +253,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5919186489569870750, guid: d8a63fed97ba6104da62aa56b0538c39, type: 3}
       propertyPath: m_SortingLayer
-      value: -2
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5919186489569870750, guid: d8a63fed97ba6104da62aa56b0538c39, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5919186489569870750, guid: d8a63fed97ba6104da62aa56b0538c39, type: 3}
       propertyPath: m_SortingLayerID
-      value: 953703375
+      value: 953050543
       objectReference: {fileID: 0}
     - target: {fileID: 5919186489569870750, guid: d8a63fed97ba6104da62aa56b0538c39, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -471,6 +475,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5169419027098593268, guid: b851e5811588229449ccb85e7ff27c45, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5169419027098593269, guid: b851e5811588229449ccb85e7ff27c45, type: 3}
       propertyPath: m_text
       value: "There you are Mr. Wolgemuth! My name is Cabbage Crusader and I\u2019m
@@ -479,6 +487,18 @@ PrefabInstance:
     - target: {fileID: 5169419027387194977, guid: b851e5811588229449ccb85e7ff27c45, type: 3}
       propertyPath: m_Name
       value: DialougeBoxBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169419027387194978, guid: b851e5811588229449ccb85e7ff27c45, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169419027387194980, guid: b851e5811588229449ccb85e7ff27c45, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169419027387194980, guid: b851e5811588229449ccb85e7ff27c45, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 953050543
       objectReference: {fileID: 0}
     - target: {fileID: 5169419027387194981, guid: b851e5811588229449ccb85e7ff27c45, type: 3}
       propertyPath: m_Pivot.x
@@ -546,11 +566,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5169419027387194981, guid: b851e5811588229449ccb85e7ff27c45, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -5.14
+      value: -0.56
       objectReference: {fileID: 0}
     - target: {fileID: 5169419027387194981, guid: b851e5811588229449ccb85e7ff27c45, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.81
+      value: -0.31
       objectReference: {fileID: 0}
     - target: {fileID: 5169419027387194981, guid: b851e5811588229449ccb85e7ff27c45, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -972,7 +992,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5879093903001019261, guid: ff3b32b410f71fa4c96c3a718087f3d9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ff3b32b410f71fa4c96c3a718087f3d9, type: 3}
 --- !u!82 &1018372279 stripped
 AudioSource:
@@ -1367,11 +1388,11 @@ PrefabInstance:
       objectReference: {fileID: 504476259}
     - target: {fileID: 9163472174997666867, guid: c3b2cecdf24b1004181c04802012dda3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.1644983
+      value: -1.1727762
       objectReference: {fileID: 0}
     - target: {fileID: 9163472174997666867, guid: c3b2cecdf24b1004181c04802012dda3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.6938334
+      value: -5.693879
       objectReference: {fileID: 0}
     - target: {fileID: 9163472175152069172, guid: c3b2cecdf24b1004181c04802012dda3, type: 3}
       propertyPath: m_RootOrder
