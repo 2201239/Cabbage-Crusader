@@ -190,6 +190,7 @@ MonoBehaviour:
   playerMaxHealth: 100
   playerCurrentHealth: 0
   healthBar: {fileID: 0}
+  swordSound: {fileID: 0}
 --- !u!1 &5919186489690632610
 GameObject:
   m_ObjectHideFlags: 0

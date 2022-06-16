@@ -27,6 +27,11 @@ public class playerCombat : MonoBehaviour
 
     private bool alreadyDead = false;
 
+    //audio sounds
+    public AudioSource swordSound;
+    public AudioSource shieldBlock;
+    public AudioSource backgroundMusic;
+
     //player is an enemy for bandits
     public static List<playerCombat> enemyList = new List<playerCombat>();
 
@@ -38,6 +43,8 @@ public class playerCombat : MonoBehaviour
 
    void Start()
     {
+        backgroundMusic.Play();
+
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
@@ -62,6 +69,7 @@ public class playerCombat : MonoBehaviour
         if (UnityEngine.Input.GetKeyDown(KeyCode.X)) //block
         {
             animator.SetTrigger("Block");
+            shieldBlock.Play();
             isBlocking = true;
         }
     }
@@ -72,6 +80,9 @@ public class playerCombat : MonoBehaviour
     {
         //Play animation
         animator.SetTrigger("Attack");
+
+        swordSound.Play();
+
         //Detect enemies in range
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         //Damage enemies
