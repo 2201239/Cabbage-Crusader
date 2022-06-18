@@ -16,23 +16,25 @@ public class playerCombat : MonoBehaviour
     public float attackRate = 1f;
     float nextAttackTime = 0f;
 
-    //health code
+    //Health Code Variables
     public int playerMaxHealth = 100;
     public int playerCurrentHealth;
-    
     public HealthBar healthBar;
+
 
     private bool isBlocking;
     private Rigidbody2D rb;
 
     private bool alreadyDead = false;
 
-    //audio sounds
+    //Adding Audio Source
     public AudioSource swordSound;
     public AudioSource shieldBlock;
     public AudioSource backgroundMusic;
 
     public string SceneName;
+
+    //--------------------------------------------------------
 
     //player is an enemy for bandits
     public static List<playerCombat> enemyList = new List<playerCombat>();
@@ -43,8 +45,10 @@ public class playerCombat : MonoBehaviour
         return enemyList;
     }
 
+    //Start is called at the beginning of the scene
    void Start()
     {
+        //Plays backround music at the start of each level
         backgroundMusic.Play();
 
         rb = GetComponent<Rigidbody2D>();
@@ -52,6 +56,7 @@ public class playerCombat : MonoBehaviour
 
         enemyList.Add(this);
  
+        //Resets player health at the start of each level
         playerCurrentHealth = playerMaxHealth;
         healthBar.SetMaxHealth(playerMaxHealth);
     }
@@ -71,6 +76,7 @@ public class playerCombat : MonoBehaviour
         if (UnityEngine.Input.GetKeyDown(KeyCode.X)) //block
         {
             animator.SetTrigger("Block");
+            //Plays shield block audio when doing blocking animation
             shieldBlock.Play();
             isBlocking = true;
         }
@@ -83,6 +89,7 @@ public class playerCombat : MonoBehaviour
         //Play animation
         animator.SetTrigger("Attack");
 
+        //Plays Audio for swinging sword
         swordSound.Play();
 
         //Detect enemies in range
@@ -101,7 +108,9 @@ public class playerCombat : MonoBehaviour
 
         if (!isBlocking)
         {
+            //Takes the previous health value and removes attack damage for new health value
             playerCurrentHealth -= attackDamage;
+            //Sends new value of health to the health bar script
             healthBar.SetHealth(playerCurrentHealth);
 
             //Play hurt animation
